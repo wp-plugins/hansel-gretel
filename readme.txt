@@ -92,9 +92,7 @@ If you find it non-operational on your particular flavor of WP, please let us kn
 4. Activate the plugin through the Plugins page on the WordPress admin.
 
 5. Add the following snippet to your theme file(s) outside [The Loop](http://codex.wordpress.org/the_loop) where you want the breadcrumbs to appear:  
-```php
-  <?php if (function_exists('HAG_Breadcrumbs')) { HAG_Breadcrumbs(); } ?>
-```
+    <?php if (function_exists('HAG_Breadcrumbs')) { HAG_Breadcrumbs(); } ?>
  
 6. Profit! For further customization options, please refer to the [GitHub Repository](https://github.com/Clark-Nikdel-Powell/Hansel-and-Gretel) for the full documentation.
 
