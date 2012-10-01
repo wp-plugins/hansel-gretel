@@ -2,7 +2,7 @@
 Contributors: rodaine, taylor_CNP
 Tags: breadcrumbs, breadcrumb, crumb, microdata, hierarchy, simple
 Requires at least: 3.1.0
-Tested up to: 3.4.1
+Tested up to: 3.4.2
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -77,7 +77,7 @@ _Installing Hansel & Gretel is easy-peasy, but of course there's a bit of admini
 ### Requirements & Compatibility ###
 
 __Minimum (theoretical) Wordpress Version Required:__ 3.1.0  
-__Actually Tested Versions__ 3.3.2, 3.4.1
+__Actually Tested Versions__ 3.3.2, 3.4.1, 3.4.2
 
 If you find it non-operational on your particular flavor of WP, please let us know. 
 
@@ -87,12 +87,14 @@ If you find it non-operational on your particular flavor of WP, please let us kn
 
 2. Make sure you're running Wordpress 3.1.0 or better. It won't work with older versions.
 
-3. Upload the `Hansel-and-Gretel` folder to your plugins directory (`/wp-content/plugins/Hansel-and-Gretel`).
+3. Upload the `hansel-gretel` folder to your plugins directory (`/wp-content/plugins/hansel-gretel`).
 
 4. Activate the plugin through the Plugins page on the WordPress admin.
 
 5. Add the following snippet to your theme file(s) outside [The Loop](http://codex.wordpress.org/the_loop) where you want the breadcrumbs to appear:  
-    `<?php if (function_exists('HAG_Breadcrumbs')) { HAG_Breadcrumbs(); } ?>`
+```php
+  <?php if (function_exists('HAG_Breadcrumbs')) { HAG_Breadcrumbs(); } ?>
+```
  
 6. Profit! For further customization options, please refer to the [GitHub Repository](https://github.com/Clark-Nikdel-Powell/Hansel-and-Gretel) for the full documentation.
 
