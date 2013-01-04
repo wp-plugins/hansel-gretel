@@ -250,6 +250,9 @@ final class HAG_Crumb {
 		elseif (is_comments_popup())
 			return array_merge($crumbs, self::get_comment_popup_crumbs($options));
 		
+		elseif (is_attachment())
+			return $crumbs;
+
 		elseif (is_singular())
 			return array_merge($crumbs, self::get_singular_crumbs($options));
 		
@@ -312,6 +315,7 @@ final class HAG_Crumb {
 		//break out if we aren't looking deeper
 		if ($fp || !$cbh) return $crumbs;
 		if (!$bh && !is_null($post) && 'post' !== $post->post_type) return $crumbs;
+		if (is_search() || is_404()) return $crumbs;
 
 		//load in the custom blog page crumb
 		$blog = HAG_Utils::get_blog_home();
@@ -615,7 +619,7 @@ final class HAG_Crumb {
 		} elseif ($options['taxonomy_show']) {
 		
 			$tax_names = get_object_taxonomies($post);
-			$taxes = get_object_taxonomies($post, OBJECT);
+			$taxes = get_object_taxonomies($post->post_type, OBJECT);
 			$term_args = array('orderby' => 'count', 'order' => 'DESC');			
 			$term = null;
 
